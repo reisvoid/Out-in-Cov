@@ -1,0 +1,222 @@
+body {
+  margin: 1.5em;
+  font-family: 'Poppins', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  font-size: 1.3rem;
+}
+
+.hero-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(../assets/bgcolor.png);
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  -webkit-animation: introload 2s forwards;
+          animation: introload 2s forwards;
+}
+
+.logo {
+  color: white;
+  font-weight: bold;
+}
+
+nav {
+  position: fixed;
+  right: 0%;
+  top: 0%;
+  background: #F2CDA0;
+  height: 100vh;
+  width: 50%;
+  z-index: 5;
+  text-transform: uppercase;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-transition: -webkit-transform .5s ease-in-out;
+  transition: -webkit-transform .5s ease-in-out;
+  transition: transform .5s ease-in-out;
+  transition: transform .5s ease-in-out, -webkit-transform .5s ease-in-out;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 8em;
+}
+
+nav ul a {
+  color: #145952;
+  padding: .75em 2em;
+  display: block;
+  text-align: right;
+}
+
+nav ul a:hover {
+  font-weight: bold;
+}
+
+nav .close {
+  float: right;
+  margin: 1.5em;
+  width: 2em;
+  z-index: 6;
+  cursor: pointer;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+header svg.menu {
+  fill: white;
+  width: 2em;
+  margin-top: -.6em;
+  cursor: pointer;
+  position: absolute;
+  right: 1em;
+  top: 2.2em;
+}
+
+section.hero {
+  color: white;
+  height: 90vh;
+  -webkit-animation: moveDown 1s ease-in-out forwards;
+          animation: moveDown 1s ease-in-out forwards;
+  opacity: 0;
+}
+
+section.hero svg {
+  stroke: white;
+}
+
+section.hero svg path {
+  fill: white;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-top: 2em;
+  line-height: 3.3rem;
+}
+
+.subhead {
+  font-size: 1.3rem;
+}
+
+span {
+  color: #F2CDA0;
+}
+
+.open-nav {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+@media only screen and (min-width: 680px) {
+  body {
+    margin: 1.5em 5em;
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
+@media only screen and (min-width: 820px) {
+  .menu {
+    display: none;
+  }
+  nav {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    position: unset;
+    display: block;
+    width: auto;
+    height: auto;
+    background: none;
+  }
+  nav svg.close {
+    display: none;
+  }
+  nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0;
+  }
+  nav ul a {
+    color: white;
+    padding: .5em 1.5em;
+    font-size: 1rem;
+  }
+  nav ul a:hover {
+    background: none;
+    text-decoration: underline;
+  }
+  .hero-img {
+    left: unset;
+    right: 0;
+  }
+  .logo span {
+    color: #145952;
+  }
+  section.hero {
+    height: auto;
+    width: 40%;
+    margin-bottom: 28em;
+  }
+}
+
+@-webkit-keyframes introload {
+  from {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  to {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+@keyframes introload {
+  from {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  to {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+@-webkit-keyframes moveDown {
+  from {
+    -webkit-transform: translateY(-100px);
+            transform: translateY(-100px);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes moveDown {
+  from {
+    -webkit-transform: translateY(-100px);
+            transform: translateY(-100px);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,261 @@
+html {
+    height: 100%;
+    overflow: hidden;
+}
+
+
+
+body {
+    margin: 1.5em;
+    font-family: 'Poppins', sans-serif;
+    color: aquamarine;
+    margin: 0%;
+    padding: 0%;
+    perspective: 1px;
+    transform-style: preserve-3d;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    
+}
+
+header {
+    box-sizing: border-box;
+    min-height:100vh;
+    padding: 30vw 0 5vw;
+    position: relative;
+    transform-style: inherit;
+    width: 100vw;
+}
+
+header h1 {
+    margin-top: -100px;
+}
+
+header, header::before {
+    background: 50% 50% / cover;
+}
+
+header::before {
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: block;
+    background-image: url(.../assets/canvas/jpg);
+    background-size: cover;
+    transform-origin: center center 0;
+    transform: translateZ(-1px) scale(2);
+    z-index: -1;
+    min-height: 100vh;
+}
+
+
+
+//end of parallax testing 
+a {
+    text-decoration: none;
+    font-size: 1.3rem;
+}
+ 
+.hero-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* background: url(../assets/bgcolor.png);
+    background-size: cover;
+    width: 100%;
+    height: 100vh; */
+    //vh (viewport height) is what's viewable currently in the browser
+    z-index: -1;
+    //makes the bg image fall behind other elements
+    animation: introload 2s forwards;
+    //overflow: hidden;
+
+}
+
+.logo {
+    color: white;
+    font-weight: bold;
+}
+
+
+nav {
+    position: fixed;
+    right: 0%;
+    top: 0%;
+    background: #F2CDA0;
+    height: 100vh;
+    width: 50%;
+    z-index: 5;
+    text-transform: uppercase;
+    transform: translateX(100%);
+    //hides the menu
+    transition: transform .5s ease-in-out;
+    
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin-top: 8em;
+        
+        
+        a {
+            color: #F2CDA0;
+            padding: .75em 2em;
+            display: block;
+            //padding on a link element won't work unless it's display=block
+            text-align: right;
+            
+            
+            &:hover {
+                //background: #6d8684;
+                font-weight: bold;
+            }
+        } 
+    }
+    
+    .close {
+        float: right;
+        margin: 1.5em;
+        width: 2em;
+        z-index: 6;
+        cursor: pointer;
+    }
+}
+
+/* header {
+    display: flex;
+    justify-content: space-between;
+    
+
+    svg.menu {
+        fill: white;
+        width: 2em;
+        margin-top: -.6em;
+        cursor: pointer;
+        position: absolute;
+        right: 1em;
+        top: 2.2em;
+    }
+} */
+
+section.hero {
+    color: white;
+    height: 90vh;
+    animation: moveDown 1s ease-in-out forwards;
+    opacity: 0;
+
+    svg {
+        stroke: white;
+
+        path {
+            fill: white;
+        }
+    }
+}
+
+h1 {
+    font-size: 3rem;
+    margin-top: 2em;
+    line-height: 3.3rem;
+}
+
+.subhead {
+    font-size: 1.3rem;
+}
+
+span {
+    color: #F2CDA0;
+}
+
+.open-nav {
+    transform: translateX(0);
+}
+
+@media only screen and (min-width: 680px) {
+
+    body {
+        margin: 1.5em 5em;
+        font-family: 'Poppins', sans-serif;
+    }
+}
+
+@media only screen and (min-width: 820px) {
+
+    .menu {
+        display: none;
+    }
+
+    nav {
+        transform: translateX(0);
+        position: unset;
+        display: block;
+        width: auto;
+        height: auto;
+        background: none;
+
+        svg.close {
+            display: none;
+        }
+
+        ul {
+            display: flex;
+            margin: 0;
+            
+            a {
+                color: white;
+                padding: .5em 1.5em;
+                font-size: 1rem;
+
+                &:hover {
+                    background: none;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    .hero-img {
+        left: unset;
+        right: 0;
+        //width: 50%;
+        //height: 50em;
+        
+    }
+
+    .logo { 
+        color: #F2CDA0;
+
+        span {
+            color: #F2CDA0; 
+        }
+    } 
+
+    section.hero {
+        //color: black;
+        height: auto;
+        width: 40%;
+        margin-bottom: 28em;
+    }
+}
+
+@keyframes introload {
+    from {
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+    to {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+}
+
+@keyframes moveDown {
+    from { 
+        transform: translateY(-100px);
+    }
+    to {
+        transform:translateY(0);
+        opacity: 1;
+    }
+}   
